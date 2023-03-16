@@ -49,11 +49,6 @@
                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                 </button>
                                                 @include('admin.pengaduan.show')
-                                                <a href="{{ route('editmasyarakat', $item->nik) }}" class="btn btn-warning"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#drop{{ $item->nik }}">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </button>
-                                                @include('admin.pengaduan.drop')
                                             </td>
                                         </tr>
                                     @endforeach

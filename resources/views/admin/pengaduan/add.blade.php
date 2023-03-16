@@ -38,7 +38,7 @@
                         </div>
                         <div class="from-group">
                             <label>Foto</label> <sup>*Tambahkan jika ada</sup>
-                            <input type="file" class="form-control" id="foto" name="foto" value="{{ old('foto') }}">
+                            <input style="margin-bottom: 10px" type="file" class="form-control" id="foto" name="foto" value="{{ old('foto') }}">
                         </div>
 
                         <button type="submit" class="btn btn-info" id="btn-float">Simpan </button>
