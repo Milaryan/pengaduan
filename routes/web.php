@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [MasyarakatController::class, 'index']);
-Route::group(['prefix' => 'masyarakat'], function(){
+Route::group(['middleware' => 'auth'], function(){
     Route::get('/', [MasyarakatController::class, 'index']);
-    Route::get('/home', [MasyarakatController::class, 'index']);
+    Route::group(['prefix' => 'masyarakat'], function(){
+        Route::get('/', [MasyarakatController::class, 'index']);
+        Route::get('/home', [MasyarakatController::class, 'index']);
+    });
 });
 
 Route::group(['prefix' => 'admin'], function(){
@@ -54,6 +56,10 @@ Route::group(['prefix' => 'admin'], function(){
 
 });
 
-Route::get('/login', [LoginController::class, 'indexlogin']);
-Route::get('/register', [LoginController::class, 'indexregis']);
+Route::group(['middleware' => 'guest'], function(){
+    Route::get('/login', [LoginController::class, 'indexlogin'])->name('login');
+    Route::post('/login-post', [LoginController::class, 'authenticate'])->name('loginpost');
+    Route::get('/register', [LoginController::class, 'indexregis'])->name('regis');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+});
 

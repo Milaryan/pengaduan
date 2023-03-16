@@ -33,7 +33,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src={{ asset("images/loading.gif") }} alt="#" /></div>
       </div>
       <!-- end loader -->
       <!-- header -->
@@ -125,21 +125,21 @@
             <div class="row">
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="images/ss.png" alt="img"/></figure>
+                     <figure><img src={{ asset("images/ss.png") }} alt="img"/></figure>
                      <h3> Pertama </h3>
-                     <p>Setelah melakukan Login anda akan diarahkan ke halaman Home, lihat bagian atas lalu cari dan klik pengaduan</p>
+                     <p>Silahkan login terlebih dahulu sebelum membuat pengaduan. Setelah melakukan Login anda akan diarahkan ke halaman Home, lihat bagian atas lalu cari dan klik pengaduan</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="images/ss1.png" alt="img"/></figure>
+                     <figure><img src={{ asset("images/ss1.png") }} alt="img"/></figure>
                      <h3> Kedua</h3>
                      <p>Anda akan diarahkan pada form pengaduan, isi form sesuai dengan masalah yang terjadi tanpa melebih-lebihkan. Sertakan foto apabila ada dan diperlukan. Klik tombol submit untuk mengirim.</p>
                   </div>
                </div>
                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                   <div class="plants-box">
-                     <figure><img src="images/gb1.jpg" alt="img"/></figure>
+                     <figure><img src={{ asset("images/gb1.jpg") }} alt="img"/></figure>
                      <h3> Ketiga</h3>
                      <p>Setelah menekan tombol submit silahkan tunggu laporan pengaduan anda sampai proses selesai. Silahkan hubungi (0321) 321750 atau media social kami apabila terdapat masalah genting atau perlu diselesaikan secepatnya</p>
                   </div>
@@ -164,7 +164,7 @@
             <div class="row">
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <label for="nik">NIK</label>
-                  <input class="form-control" placeholder="Masukkan NIK" type="text" name="name">
+                  <input class="form-control" placeholder="Masukkan NIK" type="text" name="nik" value="{{ Auth::user()->nik }}">
                </div>
                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <label for="tgl_pengaduan">Tanggal Pengaduan</label>

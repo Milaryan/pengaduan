@@ -20,9 +20,11 @@
   <div class="login-card">
       <h1>Login</h1>
       <h4>Silahkan Login Sebelum Menggunakan Website</h4><br>
-        <form>
-            <input type="text" name="user" placeholder="Username">
-            <input type="password" name="pass" placeholder="Password">
+      <p>{{ session()->get('message') }}</p>
+        <form method="POST" action="{{ route('loginpost') }}">
+          @csrf
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
             <input type="submit" name="login" class="login login-submit" value="login">
         </form>
 

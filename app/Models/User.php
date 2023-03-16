@@ -23,6 +23,9 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $table = 'masyarakat';
+    protected $primaryKey = 'nik';
+
     /**
      * The attributes that should be hidden for serialization.
      *

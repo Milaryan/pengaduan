@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\Masyarakat as Authenticatable;
 
-class Masyarakat extends Authenticatable
+class Masyarakat extends Model
 {
     use HasFactory;
     protected $table = 'masyarakat';

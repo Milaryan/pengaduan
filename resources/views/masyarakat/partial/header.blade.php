@@ -19,7 +19,11 @@
                             <li> <a href="#about">Tentang Kami</a> </li>
                             <li> <a href="#cara">Tata Cara</a> </li>
                             <li><a href="#pengaduan">Pengaduan</a></li>
-                            <li><a href="/login">Login</a></li>
+                            @if (Auth::user())
+                              <li><a href="{{ route('logout') }}">Logout</a></li>                                
+                            @else                              
+                              <li><a href="/login">Login</a></li>                                
+                            @endif
                          </ul>
                       </nav>
                    </div>
